@@ -1,0 +1,146 @@
+<!doctype html>
+<!--=== Evgeniy Fedorov === -->
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="css/favicon.ico"/>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Vetting inspection request</title>
+</head>
+<body>
+    <div class="container">
+        <header>Vetting inspection request</header>
+
+        <form action="#" method="post">
+            <div class="form first">
+                <div class="details vessel">
+                    <span class="title">Vessel information:</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Vessel name</label>
+                            <input type="text" placeholder="Enter vessel name" required name="vesselName">
+                        </div>
+
+                        <div class="input-field">
+                            <label>IMO number</label>
+                            <input type="number" placeholder="Enter IMO number" required name="vesselIMO">
+                         </div>
+
+                        <div class="input-field">
+                            <label>Date delivered</label>
+                            <input type="date" required name="vesselDateDelivered">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details requestor">
+                    <span class="title">Requestor of Inspection Contact Details:</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Requestor's Contact Name</label>
+                            <input type="text" placeholder="Enter requestor's name" required name="requestorName">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Technical Management Company</label>
+                            <input type="text" placeholder="Enter technical Management Company" required name="technicalName">
+                        </div>
+
+                        <div class="input-field">
+                            <label>E-mail Address</label>
+                            <input type="email" placeholder="Report will be sent to this address" required name="requestorName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details port">
+                    <span class="title">Port details:</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Port(s)</label>
+                            <input type="text" placeholder="Enter port(s) of arrival" required name="portName">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Estimated Arrival Date</label>
+                            <input type="date" required name="arrivalDate">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Length of Time at Berth</label>
+                            <input type="text" placeholder="Enter length of time at berth" required name="timeAtBerth">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Cargo Operation</label>
+                            <input type="text" placeholder="Loading or Discharging" required name="cargoOperation">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Type of cargo to be handled</label>
+                            <input type="text" placeholder="Oil/Chem/Gas" required name="typeOfCargo">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Means of Access</label>
+                            <input type="text" placeholder="Gangway, Helicopter, Launch" required name="meansOfAccess">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details agent">
+                    <span class="title">Agent details:</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Agent name</label>
+                            <input type="text" placeholder="Enter agent name" required name="agentName">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Agents Office Telephone Number(s):</label>
+                            <input type="text" placeholder="Enter agent office telephone number" required name="agentOfficeTelephone">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Agents mobile</label>
+                            <input type="text" placeholder="Enter agent mobile" required name="agentMobile">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Agents Facsimile Number:</label>
+                            <input type="text" placeholder="Enter Agents Facsimile Number" required name="agentFacsimile">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Agents E-mail Address: </label>
+                            <input type="email" placeholder="Enter Agents E-mail Address" required name="agentEmail">
+                        </div>
+
+                        <div class="input-field">
+
+                        </div>
+                        <span class="title">Invoice transmission details:</span>
+                        <p>PAYMENT WILL BE MADE BY LOCAL AGENT COMPANY AT THE PORT OF INSPECTION</p>
+                    </div>
+                    <button class="submitBtn">
+                        <span class="btnReq">Send request</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
