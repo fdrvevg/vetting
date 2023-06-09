@@ -2,15 +2,17 @@
 <!--=== Evgeniy Fedorov === -->
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/png" href="http://ptport.ru/bitrix/templates/en_prport_inner_wo_sidebar/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="css/favicon.ico"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link rel="stylesheet" href="style.css">
 
     <title>Vetting inspection request</title>
 </head>
@@ -19,24 +21,23 @@
         <header>Vetting inspection request</header>
 
         <form action="#" method="post">
-            <div class="form first">
+            <div class="form">
                 <div class="details vessel">
                     <span class="title">Vessel information:</span>
 
                     <div class="fields">
                         <div class="input-field">
                             <label>Vessel name</label>
-                            <input type="text" placeholder="Enter vessel name" required name="vesselName">
+                            <input type="text" placeholder="Enter vessel name" required name="vesselName" id="vesselName">
                         </div>
 
                         <div class="input-field">
                             <label>IMO number</label>
-                            <input type="number" placeholder="Enter IMO number" required name="vesselIMO">
+                            <input type="number" placeholder="Enter IMO number" required name="vesselIMO" id="vesselIMO">
                          </div>
 
                         <div class="input-field">
-                            <label>Date delivered</label>
-                            <input type="date" required name="vesselDateDelivered">
+
                         </div>
                     </div>
                 </div>
@@ -47,17 +48,17 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Requestor's Contact Name</label>
-                            <input type="text" placeholder="Enter requestor's name" required name="requestorName">
+                            <input type="text" placeholder="Enter requestor's name" required name="requestorName" id="requestorName">
                         </div>
 
                         <div class="input-field">
                             <label>Technical Management Company</label>
-                            <input type="text" placeholder="Enter technical Management Company" required name="technicalName">
+                            <input type="text" placeholder="Enter technical management company" required name="technicalName" id="technicalName">
                         </div>
 
                         <div class="input-field">
                             <label>E-mail Address</label>
-                            <input type="email" placeholder="Report will be sent to this address" required name="requestorName">
+                            <input type="email" placeholder="Report will be sent to this address" required name="requestorEmail" id="requestorEmail">
                         </div>
                     </div>
                 </div>
@@ -68,32 +69,32 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Port(s)</label>
-                            <input type="text" placeholder="Enter port(s) of arrival" required name="portName">
+                            <input type="text" placeholder="Enter port(s) of arrival" required name="portName" id="portName" value="PRIMORSK">
                         </div>
 
                         <div class="input-field">
                             <label>Estimated Arrival Date</label>
-                            <input type="date" required name="arrivalDate">
+                            <input type="date" required name="arrivalDate" id="arrivalDate">
                         </div>
 
                         <div class="input-field">
                             <label>Length of Time at Berth</label>
-                            <input type="text" placeholder="Enter length of time at berth" required name="timeAtBerth">
+                            <input type="text" placeholder="Enter length of time at berth" required name="timeAtBerth" id="timeAtBerth">
                         </div>
 
                         <div class="input-field">
                             <label>Cargo Operation</label>
-                            <input type="text" placeholder="Loading or Discharging" required name="cargoOperation">
+                            <input type="text" placeholder="Loading or Discharging" required name="cargoOperation" id="cargoOperation">
                         </div>
 
                         <div class="input-field">
                             <label>Type of cargo to be handled</label>
-                            <input type="text" placeholder="Oil/Chem/Gas" required name="typeOfCargo">
+                            <input type="text" placeholder="Oil / Chem / Gas" required name="typeOfCargo" id="typeOfCargo">
                         </div>
 
                         <div class="input-field">
                             <label>Means of Access</label>
-                            <input type="text" placeholder="Gangway, Helicopter, Launch" required name="meansOfAccess">
+                            <input type="text" placeholder="Gangway / Helicopter / Launch" required name="meansOfAccess" id="meansOfAccess">
                         </div>
 
                     </div>
@@ -105,42 +106,66 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Agent name</label>
-                            <input type="text" placeholder="Enter agent name" required name="agentName">
+                            <input type="text" placeholder="Enter agent name" required name="agentName" id="agentName">
                         </div>
 
                         <div class="input-field">
                             <label>Agents Office Telephone Number(s):</label>
-                            <input type="text" placeholder="Enter agent office telephone number" required name="agentOfficeTelephone">
+                            <input type="text" placeholder="Enter agent office telephone number" name="agentOfficeTelephone">
                         </div>
 
                         <div class="input-field">
                             <label>Agents mobile</label>
-                            <input type="text" placeholder="Enter agent mobile" required name="agentMobile">
+                            <input type="text" placeholder="Enter agent mobile" name="agentMobile">
                         </div>
 
                         <div class="input-field">
                             <label>Agents Facsimile Number:</label>
-                            <input type="text" placeholder="Enter Agents Facsimile Number" required name="agentFacsimile">
+                            <input type="text" placeholder="Enter agents facsimile number" name="agentFacsimile">
                         </div>
 
                         <div class="input-field">
                             <label>Agents E-mail Address: </label>
-                            <input type="email" placeholder="Enter Agents E-mail Address" required name="agentEmail">
+                            <input type="text" placeholder="Enter agents e-mail address" required name="agentEmail" id="agentEmail">
                         </div>
 
                         <div class="input-field">
 
                         </div>
                         <span class="title">Invoice transmission details:</span>
-                        <p>PAYMENT WILL BE MADE BY LOCAL AGENT COMPANY AT THE PORT OF INSPECTION</p>
+                        <div class="payment">PAYMENT WILL BE MADE BY LOCAL AGENT COMPANY AT THE PORT OF INSPECTION</div>
                     </div>
-                    <button class="submitBtn">
-                        <span class="btnReq">Send request</span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
+                <div class="captcha-request">
+                    <div class="captcha-area">
+                        <div class="captcha-img">
+                            <img src="img/captcha-bg.png" alt="captcha">
+                            <span class="captcha"></span>
+                        </div>
+                        <button class="reload-btn">
+                            <i class="fas fa-redo-alt"></i>
+                        </button>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter captcha" required name="captcha" id="captcha" maxlength="5">
+                    </div>
+                    <div class="input-field">
+
+                    </div>
+
+                </div>
+                    <div class="send-fields">
+                        <button class="submitBtn">
+                            <span class="btnReq">Send request</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    <div class="status-txt"></div>
+                    </div>
                 </div>
             </div>
+
         </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
