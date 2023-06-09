@@ -109,7 +109,6 @@ checkBtn.addEventListener("click",  () => {
     else {
         requestorEmail.style.borderColor = "#aaa";
         statusTxt.innerText = "";
-        return true;
     }
 
 
