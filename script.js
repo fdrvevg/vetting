@@ -39,6 +39,20 @@ function required(inputtX)
     return true;
 }
 
+// function validateEmail(inputtX) {
+//
+//     if (inputtX.value != /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
+//     {
+//         inputtX.style.borderColor = "red";
+//         inputtX.focus();
+//         return false;
+//     } else {
+//
+//         inputtX.style.borderColor = "#aaa";
+//         statusTxt.innerText = "";
+//         return true;
+//     }
+// }
 
 let allCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
                      'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
@@ -83,9 +97,21 @@ checkBtn.addEventListener("click",  () => {
     }
 
     if (required(requestorEmail) == false) {
-        statusTxt.innerText = "Please enter your email address! Report will be sent to this address.";
+        statusTxt.innerText = "Please enter your e-mail address! Report will be sent to this address.";
         return;
     }
+
+    if (!requestorEmail.value.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)) {
+        statusTxt.innerText = "Please enter correct e-mail address! Report will be sent to this address.";
+        requestorEmail.style.borderColor = "red";
+        requestorEmail.focus();
+        return; }
+    else {
+        requestorEmail.style.borderColor = "#aaa";
+        statusTxt.innerText = "";
+        return true;
+    }
+
 
     if (required(portName) == false) {
         statusTxt.innerText = "Please enter port(s) of arrival!";
@@ -131,8 +157,11 @@ checkBtn.addEventListener("click",  () => {
     if (inputVal == captcha.innerText){
         statusTxt.style.color = 'green';
         statusTxt.innerText = "Very good!";
+        return true;
     } else {
         statusTxt.innerText = "Captch not matched. Please try again!";
+        inputCaptcha.style.borderColor = "red";
+        inputCaptcha.focus();
         return;
     }
 });
