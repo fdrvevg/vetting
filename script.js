@@ -55,9 +55,9 @@ function required(inputtX)
 // }
 
 let allCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
-                     'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
-                     'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-                     't', 'u', 'v', 'w', 'x', 'y', 'z', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
+    'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function getCaptcha() { // получаем 5 рандомных символов из массива
     for (let i = 0; i < 5; i++) {
@@ -73,36 +73,47 @@ reloadBtn.addEventListener("click", ()=> {
     getCaptcha();
 });
 
-checkBtn.addEventListener("click",  () => {
-    statusTxt.style.display = "block";
+vesselIMO.oninput = function (from, length){
+    this.value = this.value.substring(0, 7);
+}
+
+checkBtn.addEventListener("click",  e => {
+   e.preventDefault();
+   statusTxt.style.display = "block";
 
     if (required(vesselName) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter vessel name!";
         return;
     }
 
     if (required(vesselIMO) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter vessel IMO!";
         return;
     }
 
     if (required(requestorName) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter requestor's name! We need to know how to contact you.";
         return;
     }
 
     if (required(technicalName) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter technical management company!";
         return;
     }
 
     if (required(requestorEmail) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter your e-mail address! Report will be sent to this address.";
         return;
     }
 
     if (!requestorEmail.value.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)) {
         statusTxt.innerText = "Please enter correct e-mail address! Report will be sent to this address.";
+        statusTxt.style.color = 'red';
         requestorEmail.style.borderColor = "red";
         requestorEmail.focus();
         return; }
@@ -113,53 +124,63 @@ checkBtn.addEventListener("click",  () => {
 
 
     if (required(portName) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter port(s) of arrival!";
         return;
     }
 
-    // if (required(arrivalDate) == false) {
-    //     statusTxt.innerText = "Please enter estimated arrival date!";
-    //     return;
-    // }
+    if (required(arrivalDate) == false) {
+        statusTxt.style.color = 'red';
+        statusTxt.innerText = "Please enter estimated arrival date!";
+        return;
+    }
 
     if (required(timeAtBerth) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter length of time at berth!";
         return;
     }
 
     if (required(cargoOperation) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter cargo operation!";
         return;
     }
 
     if (required(typeOfCargo) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter type of cargo to be handled!";
         return;
     }
 
     if (required(meansOfAccess) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter means of access!";
         return;
     }
 
     if (required(agentName) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter agent name!";
         return;
     }
 
     if (required(agentEmail) == false) {
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Please enter agent e-mail address!";
         return;
     }
 
     let inputVal = inputCaptcha.value.split('').join(' ');
     if (inputVal == captcha.innerText){
+        statusTxt.style.display = "block";
         statusTxt.style.color = 'green';
-        statusTxt.innerText = "Very good!";
-        return true;
-    } else {
+        statusTxt.innerText = "Your request has been successfully sent!";
+        } else {
+        statusTxt.style.display = "block";
+        statusTxt.style.borderColor = "red";
+        statusTxt.style.color = 'red';
         statusTxt.innerText = "Captch not matched. Please try again!";
-        inputCaptcha.style.borderColor = "red";
         inputCaptcha.focus();
         return;
     }
