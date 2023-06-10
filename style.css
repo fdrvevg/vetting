@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #4070f4;
+    background: #007fd5;
     min-width: 400px;
 }
 
@@ -32,6 +32,16 @@ body {
     font-weight: 600;
     color: #333;
     text-transform: uppercase;
+
+}
+
+.container header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container header img {
+    width: 350px;
 }
 
 .container header::before {
@@ -42,7 +52,7 @@ body {
     height: 3px;
     width: 27px;
     border-radius: 8px;
-    background-color: #4070f4;
+    background-color: #007fd5;
 }
 
 .container form {
@@ -111,7 +121,7 @@ body {
 }
 /* , :valid */
 .input-field input:is(:focus){
-    border: 1px solid #4070f4;
+    border: 1px solid #007fd5;
     box-shadow: 0 3px 3px rgba(0,0,0,0.13);
 }
 
@@ -169,7 +179,7 @@ body {
         border: none;
         outline: none;
         color: #ffffff;
-        background-color: #4070f4;
+        background-color: #007fd5;
         transition: all 0.3s linear;
         cursor: pointer;
 }
@@ -200,7 +210,7 @@ body {
     outline: none;
     color: #ffffff;
     width: calc(100% / 3 - 15px);
-    background-color: #4070f4;
+    background-color: #007fd5;
     transition: all 0.3s linear;
     cursor: pointer;
 }
@@ -214,6 +224,7 @@ body {
 
 .container form button{
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     height: 45px;
@@ -222,7 +233,7 @@ body {
     color: #ffffff;
     border-radius: 5px;
     margin: 10px 0;
-    background-color: #4070f4;
+    background-color: #007fd5;
     transition: all 0.3s linear;
     cursor: pointer;
     text-transform: uppercase;
@@ -239,10 +250,7 @@ body {
 
 form button:hover {
     background-color: #265df2;
-}
 
-form button i {
-    margin: 0 6px;
 }
 
 
@@ -254,7 +262,7 @@ form button i {
     font-size: 14px;
     font-weight: 400;
     color: #333;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .submitBtn {
@@ -272,7 +280,14 @@ form button i {
     font-weight: 500;
 }
 
+form .submitBtn i {
+    transition: 0.3s ease;
+    margin: 0 6px;
+}
 
+form .submitBtn:hover i {
+    transform: translate(10px);
+}
 
 
 @media (max-width: 920px) {
