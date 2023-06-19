@@ -1,3 +1,5 @@
+// Evgeniy Fedorov
+
 const captcha = document.querySelector(".captcha"),
     reloadBtn = document.querySelector(".reload-btn"),
     inputCaptcha = document.querySelector("#captcha"),
@@ -17,7 +19,6 @@ const captcha = document.querySelector(".captcha"),
     // Port details
     portName = document.querySelector("#portName"),
     arrivalDate = document.querySelector("#arrivalDate"),
-    timeAtBerth = document.querySelector("#timeAtBerth"),
     cargoOperation = document.querySelector("#cargoOperation"),
     typeOfCargo = document.querySelector("#typeOfCargo"),
     meansOfAccess = document.querySelector("#meansOfAccess"),
@@ -39,20 +40,8 @@ function required(inputtX)
     return true;
 }
 
-// function validateEmail(inputtX) {
-//
-//     if (inputtX.value != /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
-//     {
-//         inputtX.style.borderColor = "red";
-//         inputtX.focus();
-//         return false;
-//     } else {
-//
-//         inputtX.style.borderColor = "#aaa";
-//         statusTxt.innerText = "";
-//         return true;
-//     }
-// }
+
+
 
 let allCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
     'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
@@ -63,7 +52,7 @@ function getCaptcha() { // получаем 5 рандомных символо�
     for (let i = 0; i < 5; i++) {
         let randomChar = allCharacters[Math.floor(Math.random() * allCharacters.length)];
 
-        captcha.innerText += ` ${randomChar}`; // вставляем 6 рандомных символов из массива
+        captcha.innerText += ` ${randomChar}`; // вставляем 5 рандомных символов из массива
     }
 }
 
@@ -135,11 +124,6 @@ checkBtn.addEventListener("click",  e => {
         return;
     }
 
-    if (required(timeAtBerth) == false) {
-        statusTxt.style.color = 'red';
-        statusTxt.innerText = "Please enter length of time at berth!";
-        return;
-    }
 
     if (required(cargoOperation) == false) {
         statusTxt.style.color = 'red';
