@@ -19,7 +19,7 @@
 <body>
 <div class="container">
     <header>
-        <div class="logo-ptp"><img src="logo_en.png" alt="logo-ptp"></div>
+        <div class="logo-ptp"><a href="http://ptport.ru/en/"><img src="img/logo_en.png" alt="logo-ptp"></a></div>
         <h1>Vetting inspection request</h1>
     </header>
 
@@ -56,7 +56,7 @@
 
                     <div class="input-field">
                         <label>Technical management company</label>
-                        <input type="text" placeholder="Enter technical management company" required name="technicalName" id="technicalName">
+                        <input type="text" placeholder="Enter company name" required name="technicalName" id="technicalName">
                     </div>
 
                     <div class="input-field">
@@ -80,31 +80,53 @@
                         <input type="date" required name="arrivalDate" id="arrivalDate">
                     </div>
 
-                    <div class="input-field">
-                        <label>Length of time at berth</label>
-                        <input type="text" placeholder="Enter length of time at berth" required name="timeAtBerth" id="timeAtBerth">
-                    </div>
-
-                    <div class="input-field">
+                    <div class="input-field select-container">
                         <label>Cargo operation</label>
-                        <input type="text" placeholder="Loading or Discharging" required name="cargoOperation" id="cargoOperation">
+                        <select name="cargoOperation" id="cargoOperation" class="select-box">
+                            <option value="loading">Loading</option>
+                            <option value="Discharging">Discharging</option>
+                        </select>
+                        <div class="icon-container">
+                            <i class="uil uil-angle-down"></i>
+                        </div>
+<!--                        <input type="text" placeholder="Loading or Discharging" required name="cargoOperation" id="cargoOperation">-->
                     </div>
 
-                    <div class="input-field">
+                    <div class="input-field select-container">
                         <label>Type of cargo to be handled</label>
-                        <input type="text" placeholder="Oil / Chem / Gas" required name="typeOfCargo" id="typeOfCargo">
+                        <select name="typeOfCargo" id="typeOfCargo" class="select-box">
+                            <option value="oil">Oil</option>
+                            <option value="chem">Chem</option>
+                            <option value="gasoil">Gasoil</option>
+                        </select>
+                        <div class="icon-container">
+                            <i class="uil uil-angle-down"></i>
+                        </div>
+<!--                        <input type="text" placeholder="Oil / Chem / Gasoil" required name="typeOfCargo" id="typeOfCargo">-->
+                    </div>
+
+                    <div class="input-field select-container">
+                        <label>Means of access</label>
+                            <select name="meansOfAccess" id="meansOfAccess" class="select-box">
+                                <option value="gangway">Gangway</option>
+                                <option value="helicopter">Helicopter</option>
+                                <option value="launch">Launch</option>
+                            </select>
+                        <div class="icon-container">
+                            <i class="uil uil-angle-down"></i>
+                        </div>
+<!--                        <input type="text" placeholder="Gangway / Helicopter / Launch" required name="meansOfAccess" id="meansOfAccess">-->
                     </div>
 
                     <div class="input-field">
-                        <label>Means of access</label>
-                        <input type="text" placeholder="Gangway / Helicopter / Launch" required name="meansOfAccess" id="meansOfAccess">
+
                     </div>
 
                 </div>
             </div>
 
             <div class="details agent">
-                <span class="title">Agent details:</span>
+                <span class="title">Agent details</span>
 
                 <div class="fields">
                     <div class="input-field">
@@ -113,7 +135,7 @@
                     </div>
 
                     <div class="input-field">
-                        <label>Agents office telephone number(s)</label>
+                        <label>Agents office telephone number(s):</label>
                         <input type="text" placeholder="Enter agent office telephone number" name="agentOfficeTelephone">
                     </div>
 
@@ -122,10 +144,7 @@
                         <input type="text" placeholder="Enter agent mobile" name="agentMobile">
                     </div>
 
-                    <div class="input-field">
-                        <label>Agents facsimile number</label>
-                        <input type="text" placeholder="Enter agents facsimile number" name="agentFacsimile">
-                    </div>
+
 
                     <div class="input-field">
                         <label>Agents e-mail address</label>
@@ -135,13 +154,17 @@
                     <div class="input-field">
 
                     </div>
+
+                    <div class="input-field">
+
+                    </div>
                     <span class="title">Invoice transmission details:</span>
-                    <div class="payment">PAYMENT WILL BE MADE BY LOCAL AGENT COMPANY AT THE PORT OF INSPECTION</div>
+                    <div class="payment">PAYMENT WILL BE MADE BY LOCAL AGENT AT THE PORT OF INSPECTION</div>
                 </div>
                 <div class="captcha-request">
                     <div class="captcha-area">
                         <div class="captcha-img">
-                            <img src="captcha-bg.png" alt="captcha">
+                            <img src="https://codingnepalweb.com/demos/custom-captcha-in-javascript/captcha-bg.png" alt="captcha">
                             <span class="captcha"></span>
                         </div>
                         <button class="reload-btn" type="button">
@@ -169,6 +192,6 @@
     </form>
 </div>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
